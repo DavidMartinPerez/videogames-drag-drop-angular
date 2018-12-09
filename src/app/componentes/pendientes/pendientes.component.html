@@ -1,6 +1,6 @@
 <h1>Pendientes</h1>
 
 <input #input />
-<button (click)="addGame(input)">update</button>
+<button (click)="addGame(input.value)">añadir</button>
 
 <dragdrop [list]="videogames" (updateList)="updateList($event)">Loading...</dragdrop>

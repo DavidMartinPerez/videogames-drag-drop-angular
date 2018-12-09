@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'pendientes',
@@ -6,30 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PendientesComponent implements OnInit {
 
-  constructor() { }
+  public videogames:any[]
+
+  constructor(private http:HttpService) { }
 
   ngOnInit() {
+    //Rescatamos los videojuegos
+    this.videogames = this.http.getPendientes();
   }
 
-  videogames = [
-    'Celeste',
-    'God of war',
-    'Horizon Zero Dawn',
-    'Heavy Run',
-    'Detroit: Become Human',
-    'Dark Souls Remaster',
-    'Nioh',
-    'Persona 5'
-  ];
-
-
-
   addGame(element){
-    this.videogames.push(element.value)
+    //Añadimos un elemento
+    this.http.addPendiente(element)
   }
 
   updateList(list){
+    //Actualizamos los puesto de la lista
     this.videogames = list
-    console.log(this.videogames)
+    this.http.updatePendientes(this.videogames)
   }
 }
