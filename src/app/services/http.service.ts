@@ -9,6 +9,7 @@ export class HttpService {
   //TODO: PETICIONES A FIREBASE
   constructor(private store:StoreService) { }
 
+  //######## Acciones para pendiente ###########
 
   getPendientes(){
     return this.store.getStore()["pendientes"]
@@ -23,4 +24,22 @@ export class HttpService {
     list.push(data)
     this.store.setStore({pendientes: list})
   }
+
+
+  //######## Acciones para deseados ###########
+
+  getDeseados(){
+    return this.store.getStore()["deseados"]
+  }
+
+  updateDeseados(data){
+    this.store.setStore({deseados: data})
+  }
+
+  addDeseados(data){
+    let list = this.store.getStore()["deseados"];
+    list.push(data)
+    this.store.setStore({deseados: list})
+  }
+
 }

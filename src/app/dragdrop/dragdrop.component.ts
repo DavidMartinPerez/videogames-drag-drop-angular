@@ -15,6 +15,7 @@ export class DragdropComponent implements OnInit {
 
     @Input() list: any[]
     @Output() updateList = new EventEmitter();
+    @Output() clickActionElement = new EventEmitter();
 
     drop(event: CdkDragDrop<string[]>) {
         moveItemInArray(this.list, event.previousIndex, event.currentIndex);
@@ -24,4 +25,9 @@ export class DragdropComponent implements OnInit {
     updateListGames(array){
         this.updateList.emit(array)
     }
+
+    clickAction(element){
+        this.clickActionElement.emit(element)
+    }
+
 }

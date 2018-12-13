@@ -6,11 +6,9 @@ body {
   margin: 0;
 }
 
-.basic-container {
-  padding: 30px;
-}
-
-.version-info {
-  font-size: 8pt;
-  float: right;
+.flex-center{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

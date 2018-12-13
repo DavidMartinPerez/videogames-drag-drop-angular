@@ -1,3 +1,6 @@
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-  <div class="example-box" *ngFor="let element of list" cdkDrag>{{element}}</div>
+<div cdkDropList class="list" (cdkDropListDropped)="drop($event)">
+  <div class="box" *ngFor="let element of list; let i = index" cdkDrag>
+    {{ i+1 }} .- {{ element }}
+    <div class="conseguido" (click)="clickAction(element)">Conseguido</div>
+  </div>
 </div>

@@ -1,6 +1,8 @@
 <h1>Pendientes</h1>
-
-<input #input />
-<button (click)="addGame(input.value)">añadir</button>
-
-<dragdrop [list]="videogames" (updateList)="updateList($event)">Loading...</dragdrop>
+<div class="flex-center">
+    <input #input />
+    <button (click)="addGame(input.value)">añadir</button>
+</div><br/>
+<div class="flex-center">
+    <dragdrop [list]="videogames" (updateList)="updateList($event)">Loading...</dragdrop>
+</div>
